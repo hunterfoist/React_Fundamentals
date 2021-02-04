@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 const JSXRules = () => {
 return(
     <div className="main">
@@ -12,8 +15,13 @@ return(
                 <dd> You can write in vanilla JS, but most sane people use JSX. </dd>
         </dl>
     <hr />
-    </div>
+
     <NormalComponent />
+    <br/>
+    <br/>
+    <CreateElementComponent />
+    </div>
+    
     </div>
 );
 }
@@ -26,6 +34,16 @@ const NormalComponent = () => {
         <p>This was constructed using JSX in the return</p>
     </div>
         );
-}
+};
+
+const CreateElementComponent = () => {
+    return (
+    React.createElement('div', { style: { border: '2px solid black' }},
+    React.createElement('h1', null, 'CreateElement Component'),
+    React.createElement('p', null, 'This was constructed with CreateElement calls in the return.')
+    )
+    );
+};
+    
 
 export default JSXRules;
